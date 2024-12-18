@@ -181,52 +181,66 @@ td img.echoes {
 /* Responsive styles */
 
 /* Responsive styles for small screens */
+
 @media (max-width: 600px) {
     /* Main container adjustments */
     .main-container {
         width: 100%;
-        padding: 10px;
-        margin: 10px 0;
+        padding: 5px;
+        margin: 5px 0;
     }
 
     /* Headings adjustments */
     h1 {
-        font-size: 1.5rem;
-        margin: 10px 0;
-    }
-
-    h2 {
-        font-size: 1rem;
+        font-size: 1.2rem; /* Smaller font size */
         margin: 8px 0;
     }
 
+    h2 {
+        font-size: 0.9rem; /* Smaller font size */
+        margin: 5px 0;
+    }
+
     /* Form adjustments */
+    form label {
+        font-size: 1rem; /* Adjusted form label size */
+    }
+
     form input[type="text"] {
         width: 100%;
-        font-size: 0.9rem;
-        margin-bottom: 10px;
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+        padding: 5px;
     }
 
     form button[type="submit"] {
         width: 100%;
-        font-size: 1rem;
-        padding: 5px;
+        font-size: 0.9rem;
+        padding: 6px;
     }
 
-    /* Table adjustments */
+    /* Table adjustments: Horizontal scroll and compact layout */
+    .content {
+        overflow-x: auto; /* Horizontal scroll for the table */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
     table {
-        font-size: 0.8em;
+        width: 100%; /* Full width */
+        font-size: 0.8em; /* Smaller font size */
+        min-width: 550px; /* Avoid squeezing the table content */
     }
 
     th, td {
-        padding: 8px;
+        padding: 5px; /* Reduced padding */
+        white-space: nowrap; /* Prevent text wrapping */
     }
 
     td img.echoes {
-        width: 0.9rem;
+        width: 0.8rem; /* Shrink image icons */
     }
 
-    /* Navigation adjustments for small screens */
+    /* Navigation adjustments */
     nav ul {
         display: flex;
         flex-direction: column;
@@ -242,7 +256,8 @@ td img.echoes {
     }
 
     nav ul li a {
-        padding: 10px 0;
+        padding: 8px 0; /* Smaller padding */
+        font-size: 0.9rem; /* Smaller font size */
         border-radius: 0;
         border-right: none;
     }
@@ -253,21 +268,21 @@ td img.echoes {
 
     /* Footer adjustments */
     .footer-content {
-        font-size: 0.9rem;
+        font-size: 0.7rem; /* Smaller font size */
     }
 
     .mika, .kofi {
-        width: 2rem;
-        margin: 5px;
+        width: 1.5rem; /* Smaller icons */
+        margin: 3px;
     }
 
     #result {
-        font-size: 1rem;
+        font-size: 0.9rem; /* Smaller result text */
     }
 
     #result .total-cost-box {
-        font-size: 1rem;
-        padding: 8px;
+        font-size: 0.9rem;
+        padding: 6px;
     }
 }
 
