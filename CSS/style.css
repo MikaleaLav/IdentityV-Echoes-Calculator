@@ -180,91 +180,52 @@ td img.echoes {
 
 /* Responsive styles */
 
+/* Optimized Responsive styles for small screens */
 @media (max-width: 600px) {
-    / Ensure no horizontal overflow and allow scrolling */
-    
-{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;}
+    /* General reset and overflow handling */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
     html, body {
         width: 100%;
-        min-height: 100vh; /* Ensures full height /
-        overflow-x: hidden; / Prevent horizontal overflow /
-        overflow-y: auto; / Enable vertical scrolling /
+        min-height: 100vh; /* Full height */
+        overflow-x: hidden; /* Prevent horizontal overflow */
+        overflow-y: auto; /* Allow vertical scrolling */
         margin: 0;
-        padding: 20px; / Adds space on all sides /
-        zoom: 0.9; / Slight zoom-out effect /
+        padding: 10px; /* Add space around the page */
+        scroll-behavior: smooth;
+        background-color: #111; /* Optional: Background to enhance visibility */
     }
 
-    / Main container adjustments /
+    /* Add extra spacing at the top and bottom */
+    body::before, body::after {
+        content: "";
+        display: block;
+        height: 50px; /* Extra space at top and bottom */
+        width: 100%;
+    }
+
+    /* Main container adjustments */
     .main-container {
         width: 100%;
+        max-width: 550px; /* Ensure it's not too wide */
+        margin: 20px auto; /* Centered with space around */
         padding: 15px;
-        margin: 10px auto; / Extra spacing /
-        background-color: rgba(17, 17, 17, 0.8); / Slight contrast to see spacing /
+        background-color: rgba(17, 17, 17, 0.9); /* High contrast for visibility */
         border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
     }
 
-    / Headings adjustments /
-    h1 {
-        font-size: 1.2rem;
-        margin: 10px 0;
-    }
-
-    h2 {
-        font-size: 1rem;
-        margin: 8px 0;
-    }
-
-    / Form adjustments /
-    form {
-        margin: 10px 0;
-    }
-
-    form input[type="text"] {
-        width: 100%;
-        font-size: 0.9rem;
-        margin-bottom: 10px;
-        padding: 8px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-    }
-
-    form button[type="submit"] {
-        width: 100%;
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-
-    / Table adjustments /
-    .content {
-        overflow-x: auto; / Horizontal scroll for table /
-        -webkit-overflow-scrolling: touch;
-        margin-bottom: 20px;
-    }
-
-    table {
-        width: 100%;
-        font-size: 0.8em;
-        min-width: 500px;
-        border-collapse: collapse;
-    }
-
-    th, td {
-        padding: 6px;
-        text-align: center;
-        white-space: nowrap; / Prevent wrapping /
-    }
-
-    td img.echoes {
-        width: 0.8rem; / Shrink images /
-    }
-
-    / Navigation adjustments /
+    /* Navigation adjustments */
     nav {
-        margin-bottom: 20px; / Adds space below the nav /
+        position: fixed;
+        top: 10px; /* Leave space above */
+        left: 0;
+        width: 100%;
+        z-index: 1000;
     }
 
     nav ul {
@@ -274,7 +235,6 @@ td img.echoes {
     }
 
     nav ul li {
-        display: block;
         width: 100%;
         text-align: center;
         border-bottom: 1px solid #ffeeab;
@@ -282,11 +242,59 @@ td img.echoes {
 
     nav ul li a {
         display: block;
-        padding: 8px 0;
-        font-size: 0.9rem;
+        padding: 10px;
+        font-size: 1rem;
     }
 
-    / Footer adjustments */
+    /* Headings adjustments */
+    h1 {
+        font-size: 1.3rem;
+        margin: 10px 0;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin: 8px 0;
+    }
+
+    /* Form adjustments */
+    form input[type="text"] {
+        width: 100%;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+
+    form button[type="submit"] {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Table adjustments */
+    .content {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        margin: 20px 0;
+        padding: 10px; /* Add spacing */
+    }
+
+    table {
+        width: 100%;
+        min-width: 550px; /* Avoid table squeeze */
+        font-size: 0.85rem;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 6px;
+        white-space: nowrap;
+    }
+
+    td img.echoes {
+        width: 0.8rem;
+    }
+
+    /* Footer adjustments */
     .footer-content {
         font-size: 0.8rem;
         margin-top: 20px;
