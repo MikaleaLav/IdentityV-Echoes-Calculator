@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title>Identity V Echoes Calculator - SAR</title>
+  <!-- style sheets -->
+  <link rel="stylesheet" href="CSS/reset.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <!-- javascript files -->
+  <script src="app.js" defer></script>
+</head>
+<body data-currency="SAR" data-rate="4">
+  <div class="main-container">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">SAR</a></li>
+        <li><a href="IQD.html">IQD</a></li>
+        <li><a href="USD.html">USD</a></li>
+ 
+      </ul>
+    </nav>
+    <header>
+      <h1>Identity V Echoes Calculator!</h1>
+      <h2>Just input the price of the item you want in echoes and this website will calculate the least amount of echoes you need to spend</h2>
+      <hr>
+      <h3>Notice! The conversions may not be 100% accurate!<br>Please keep that in mind</h3>
+    </header>
+    <div class="content">
+      <div class="form-container">
+        <form id="echoesForm">
+          <label for="textbox">Item Price (in echoes):</label>
+          <input type="text" id="textbox" name="textbox" placeholder="Type item price" required>
+          <button type="submit">Calculate</button>
+        </form>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Echoes</th>
+            <th>Echoes + Bonus</th>
+            <th>Price (USD)</th>
+            <th>Price (SAR)</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x60</td>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x60</td>
+            <td>0.99 USD</td>
+            <td class="price-sar" data-usd="0.99">-</td>
+            <td class="quantity" data-echoes="60" data-price="0.99">-</td>
+          </tr>
+          <tr>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x185</td>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x194</td>
+            <td>2.99 USD</td>
+            <td class="price-sar" data-usd="2.99">-</td>
+            <td class="quantity" data-echoes="194" data-price="2.99">-</td>
+          </tr>
+          <tr>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x305</td>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x320</td>
+            <td>4.99 USD</td>
+            <td class="price-sar" data-usd="4.99">-</td>
+            <td class="quantity" data-echoes="320" data-price="4.99">-</td>
+          </tr>
+          <tr>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x690</td>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x723</td>
+            <td>9.99 USD</td>
+            <td class="price-sar" data-usd="9.99">-</td>
+            <td class="quantity" data-echoes="723" data-price="9.99">-</td>
+          </tr>
+          <tr>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x1308</td>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x1371</td>
+            <td>19.99 USD</td>
+            <td class="price-sar" data-usd="19.99">-</td>
+            <td class="quantity" data-echoes="1371" data-price="19.99">-</td>
+          </tr>
+          <tr>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x2025</td>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x2123</td>
+            <td>29.99 USD</td>
+            <td class="price-sar" data-usd="29.99">-</td>
+            <td class="quantity" data-echoes="2123" data-price="29.99">-</td>
+          </tr>
+          <tr>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x3330</td>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x3498</td>
+            <td>49.99 USD</td>
+            <td class="price-sar" data-usd="49.99">-</td>
+            <td class="quantity" data-echoes="3498" data-price="49.99">-</td>
+          </tr>
+          <tr>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x6590</td>
+            <td><img src="images/Echo.png" alt="echoes" class="echoes"> x6918</td>
+            <td>99.99 USD</td>
+            <td class="price-sar" data-usd="99.99">-</td>
+            <td class="quantity" data-echoes="6918" data-price="99.99">-</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="result"></div>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <h2>ادعولي بالتوفيق</h2>
+        <h3><a href="https://www.instagram.com/mikalea.a?utm_source=qr" class="footer-link">Made by Mika</a> <img src="images/mika.png" alt="mika" class="mika"></h3>
+        <h3><a href="https://ko-fi.com/mika119017" class="footer-link" >Support a learning programmer</a> <a href="https://ko-fi.com/mika119017"><img src="images/kofi.png" alt="kofi" class="kofi"></a></h3>
+        
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
