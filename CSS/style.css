@@ -180,9 +180,9 @@ td img.echoes {
 
 /* Responsive styles */
 
-/* Responsive styles for small screens */
+/* Optimized Responsive styles for small screens */
 @media (max-width: 600px) {
-    /* Ensure no horizontal overflow and allow scrolling */
+    /* General reset and overflow handling */
     * {
         margin: 0;
         padding: 0;
@@ -196,82 +196,85 @@ td img.echoes {
         overflow-y: auto; /* Enable vertical scrolling */
         margin: 0;
         padding: 20px; /* Adds space on all sides */
-        zoom: 0.9; /* Slight zoom-out effect */
+        scroll-behavior: smooth; /* Smooth scrolling for better UX */
+        zoom: 1; /* Adjusted zoom for better readability */
     }
 
     /* Main container adjustments */
     .main-container {
         width: 100%;
         padding: 15px;
-        margin: 10px auto; /* Extra spacing */
-        background-color: rgba(17, 17, 17, 0.8); /* Slight contrast to see spacing */
+        margin: 20px auto; /* Additional spacing */
+        background-color: rgba(17, 17, 17, 0.8); /* High contrast for visibility */
         border-radius: 8px;
     }
 
     /* Headings adjustments */
     h1 {
-        font-size: 1.2rem;
+        font-size: 1.4rem; /* Slightly larger for readability */
         margin: 10px 0;
     }
 
     h2 {
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin: 8px 0;
     }
 
     /* Form adjustments */
     form {
-        margin: 10px 0;
+        margin: 15px 0;
     }
 
     form input[type="text"] {
         width: 100%;
-        font-size: 0.9rem;
+        font-size: 1rem;
         margin-bottom: 10px;
-        padding: 8px;
+        padding: 10px;
         border-radius: 4px;
         border: 1px solid #ccc;
     }
 
     form button[type="submit"] {
         width: 100%;
-        font-size: 0.9rem;
-        padding: 8px;
+        font-size: 1rem;
+        padding: 10px;
     }
 
     /* Table adjustments */
     .content {
-        overflow-x: auto; /* Horizontal scroll for table */
-        -webkit-overflow-scrolling: touch;
+        overflow-x: auto; /* Ensure table can scroll horizontally */
+        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling for mobile */
         margin-bottom: 20px;
+        padding: 5px; /* Add padding to avoid content being cut off */
     }
 
     table {
         width: 100%;
-        font-size: 0.8em;
-        min-width: 500px;
+        font-size: 0.9em;
+        min-width: 500px; /* Prevent table from shrinking too much */
         border-collapse: collapse;
     }
 
     th, td {
-        padding: 6px;
+        padding: 8px;
         text-align: center;
-        white-space: nowrap; /* Prevent wrapping */
+        white-space: nowrap; /* Prevent text wrapping */
     }
 
     td img.echoes {
-        width: 0.8rem; /* Shrink images */
+        width: 1rem; /* Adjust image size for better proportions */
     }
 
     /* Navigation adjustments */
     nav {
-        margin-bottom: 20px; /* Adds space below the nav */
+        margin-bottom: 20px;
     }
 
     nav ul {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     nav ul li {
@@ -283,18 +286,25 @@ td img.echoes {
 
     nav ul li a {
         display: block;
-        padding: 8px 0;
-        font-size: 0.9rem;
+        padding: 10px 0;
+        font-size: 1rem;
     }
 
     /* Footer adjustments */
     .footer-content {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         margin-top: 20px;
     }
 
     .mika, .kofi {
-        width: 1.5rem;
+        width: 2rem; /* Adjust icon size */
         margin: 5px;
+    }
+
+    /* Add some spacing to prevent top cut-off */
+    body::before {
+        content: "";
+        display: block;
+        height: 10px; /* Space to prevent the top being cut off */
     }
 }
