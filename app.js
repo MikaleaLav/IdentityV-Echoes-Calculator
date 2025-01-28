@@ -1,22 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('echoesForm');
     const resultDiv = document.getElementById('result');
     const body = document.body;
 
     // Array of background image URLs
-    const backgroundImages = ['https://pbs.twimg.com/media/Ge1RiR8bkAAbqE4?format=jpg&name=4096x4096',
-        'https://i.redd.it/pt6tuw5ijrna1.jpg',
+    const backgroundImages = [
+        'https://pbs.twimg.com/media/Ge1RiR8bkAAbqE4?format=jpg&name=4096x4096',
         'https://pbs.twimg.com/media/EGWQsgmUUAAJ_cq?format=jpg&name=4096x4096',
         'https://pbs.twimg.com/media/GD2SWamagAA9iNd?format=jpg&name=4096x4096',
         'https://pbs.twimg.com/media/F6hD7EcbQAA2vOX?format=jpg&name=large',
         'https://pbs.twimg.com/media/GRU-Cj7XAAAB8Pm?format=jpg&name=large',
-'https://i.redd.it/y81ncir47le31.jpg',
-'https://pbs.twimg.com/media/GRU-92rWYAArCTS?format=jpg&name=large',
-'https://pbs.twimg.com/media/GRU9q1SWoAADkGW?format=jpg&name=large',
-'https://pbs.twimg.com/media/GRU9tpUXkAA_gfE?format=jpg&name=large',
-'https://pbs.twimg.com/media/GRU9xR9bcAA8Yr2?format=jpg&name=large',
-'https://pbs.twimg.com/media/GRU-tEPXAAAeuMZ?format=jpg&name=large',
-'https://pbs.twimg.com/media/GRU-0d_XwAAlODV?format=jpg&name=large',
+        'https://i.redd.it/y81ncir47le31.jpg',
+        'https://pbs.twimg.com/media/GRU-92rWYAArCTS?format=jpg&name=large',
+        'https://pbs.twimg.com/media/GRU9q1SWoAADkGW?format=jpg&name=large',
+        'https://pbs.twimg.com/media/GRU9tpUXkAA_gfE?format=jpg&name=large',
+        'https://pbs.twimg.com/media/GRU9xR9bcAA8Yr2?format=jpg&name=large',
+        'https://pbs.twimg.com/media/GRU-tEPXAAAeuMZ?format=jpg&name=large',
+        'https://pbs.twimg.com/media/GRU-0d_XwAAlODV?format=jpg&name=large',
     ];
 
     // Function to select a random image from the array
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const conversionRate = parseFloat(body.getAttribute('data-rate'));
     const currency = body.getAttribute('data-currency');
 
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', function (event) {
         event.preventDefault();
         const itemPrice = parseInt(document.getElementById('textbox').value, 10);
 

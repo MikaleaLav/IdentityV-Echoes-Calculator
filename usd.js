@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('echoesForm');
     const resultDiv = document.getElementById('result');
     const body = document.body;
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const randomImage = getRandomImage(backgroundImages);
     body.style.backgroundImage = `url('${randomImage}')`;
 
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', function (event) {
         event.preventDefault();
         const itemPrice = parseInt(document.getElementById('textbox').value, 10);
 
