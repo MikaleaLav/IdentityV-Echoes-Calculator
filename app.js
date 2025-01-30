@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Set the random background image
-    const randomImage = getRandomImage(backgroundImages);
-    body.style.backgroundImage = `url('${randomImage}')`;
+    body.style.backgroundImage = `url('${getRandomImage(backgroundImages)}')`;
 
-    const conversionRate = parseFloat(body.getAttribute('data-rate'));
-    const currency = body.getAttribute('data-currency');
+    // Fetch conversion rate and currency from HTML attributes
+    const conversionRate = parseFloat(body.getAttribute('data-rate')) || 1; // Default to 1 if missing
+    const currency = body.getAttribute('data-currency') || 'USD'; // Default to USD
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -45,18 +45,19 @@ document.addEventListener('DOMContentLoaded', function () {
         let remainingEchoes = itemPrice;
         const quantities = new Array(8).fill(0);
 
+        // Cleaned-up package database (only bonus and price)
         const packages = [
-            { echoes: 60, bonus: 60, price: 0.99 },
-            { echoes: 185, bonus: 194, price: 2.99 },
-            { echoes: 305, bonus: 320, price: 4.99 },
-            { echoes: 690, bonus: 723, price: 9.99 },
-            { echoes: 1308, bonus: 1371, price: 19.99 },
-            { echoes: 2025, bonus: 2123, price: 29.99 },
-            { echoes: 3330, bonus: 3498, price: 49.99 },
-            { echoes: 6590, bonus: 6918, price: 99.99 },
+            { bonus: 60, price: 0.99 },
+            { bonus: 194, price: 2.99 },
+            { bonus: 320, price: 4.99 },
+            { bonus: 723, price: 9.99 },
+            { bonus: 1371, price: 19.99 },
+            { bonus: 2123, price: 29.99 },
+            { bonus: 3498, price: 49.99 },
+            { bonus: 6918, price: 99.99 },
         ];
 
-        // Iterate over the packages from the largest to the smallest
+        // Prioritize the largest package first
         for (let i = packages.length - 1; i >= 0; i--) {
             while (remainingEchoes >= packages[i].bonus) {
                 remainingEchoes -= packages[i].bonus;
@@ -65,41 +66,43 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // Handle remaining echoes if not perfectly divisible
+        // Handle any remaining echoes with the smallest package possible
         if (remainingEchoes > 0) {
             for (let i = 0; i < packages.length; i++) {
                 if (remainingEchoes <= packages[i].bonus) {
                     totalCostUSD += packages[i].price;
                     quantities[i]++;
-                    remainingEchoes = 0; // All echoes are now covered
+                    remainingEchoes = 0;
                     break;
                 }
             }
         }
 
+        // Convert to selected currency
         const totalCostConverted = (totalCostUSD * conversionRate).toFixed(2);
 
+        // Display result
         resultDiv.innerHTML = `
             <div class="total-cost-box">
                 Total Cost: $${totalCostUSD.toFixed(2)} (USD) / ${totalCostConverted} ${currency}
             </div>
         `;
 
-        const quantityCells = document.querySelectorAll('.quantity');
-        quantityCells.forEach((cell, index) => {
+        // Update quantities in the table
+        document.querySelectorAll('.quantity').forEach((cell, index) => {
             cell.textContent = quantities[index] > 0 ? quantities[index] : '-';
         });
 
-        const priceCells = document.querySelectorAll('.price-sar');
-        priceCells.forEach(cell => {
+        // Convert prices in the table
+        document.querySelectorAll('.price-sar').forEach(cell => {
             const usdPrice = parseFloat(cell.getAttribute('data-usd'));
             const convertedPrice = (usdPrice * conversionRate).toFixed(2);
             cell.textContent = `${convertedPrice} ${currency}`;
         });
     });
 
-    const priceCells = document.querySelectorAll('.price-sar');
-    priceCells.forEach(cell => {
+    // Convert prices in the table on page load
+    document.querySelectorAll('.price-sar').forEach(cell => {
         const usdPrice = parseFloat(cell.getAttribute('data-usd'));
         const convertedPrice = (usdPrice * conversionRate).toFixed(2);
         cell.textContent = `${convertedPrice} ${currency}`;
