@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Array of background image URLs
     const backgroundImages = [
         'https://pbs.twimg.com/media/Ge1RiR8bkAAbqE4?format=jpg&name=4096x4096',
+        'https://pbs.twimg.com/media/GhKUOKVbIAAc_F5?format=jpg&name=4096x4096',
         'https://pbs.twimg.com/media/EGWQsgmUUAAJ_cq?format=jpg&name=4096x4096',
         'https://pbs.twimg.com/media/GD2SWamagAA9iNd?format=jpg&name=4096x4096',
         'https://pbs.twimg.com/media/F6hD7EcbQAA2vOX?format=jpg&name=large',
