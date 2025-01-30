@@ -13,7 +13,8 @@ nav {
     right: 0;
     z-index: 1000;
     border-radius: 0 0 0 8px;
-    border: 1px solid #ffeeab; /* Adding border to the nav bar */
+    border: 1px solid #ffeeab;
+    /* Adding border to the nav bar */
 }
 
 nav ul {
@@ -33,11 +34,13 @@ nav ul li a {
     padding: 14px 16px;
     text-decoration: none;
     border-radius: 0 0 0 8px;
-    border-right: 1px solid #ffeeab; /* Adding border to the right of each nav item */
+    border-right: 1px solid #ffeeab;
+    /* Adding border to the right of each nav item */
 }
 
 nav ul li a:last-child {
-    border-right: none; /* Removing border from the last nav item */
+    border-right: none;
+    /* Removing border from the last nav item */
 }
 
 nav ul li a:hover {
@@ -48,15 +51,15 @@ nav ul li a.active {
     background-color: #ffeeab;
     color: black;
 }
-  
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px;
     padding: 0;
-    background-size: cover; 
-    height: 100vh; 
+    background-size: cover;
+    height: 100vh;
 }
 
 
@@ -65,12 +68,15 @@ body {
     max-width: 600px;
     margin: 20px;
     padding: 20px;
-    background-color: rgba(17, 17, 17, 0.7); /* Semi-transparent background */
+    background-color: rgba(17, 17, 17, 0.7);
+    /* Semi-transparent background */
     color: #f7f7f7;
     border-radius: 8px;
 }
 
-header, .content, footer {
+header,
+.content,
+footer {
     width: 100%;
     text-align: center;
 }
@@ -97,10 +103,13 @@ form input[type="text"] {
     font-size: 1rem;
     width: 200px;
     border-radius: 4px;
-    background-color: #fffef4; /* Change the background color of the input box */
-    color: #000; /* Change the text color of the input box */
-    border: 2px solid #640c0c; /* Change the border color of the input box */
-   
+    background-color: #fffef4;
+    /* Change the background color of the input box */
+    color: #000;
+    /* Change the text color of the input box */
+    border: 2px solid #640c0c;
+    /* Change the border color of the input box */
+
 }
 
 form button[type="submit"] {
@@ -109,27 +118,31 @@ form button[type="submit"] {
     margin-top: 10px;
     border: none;
     border-radius: 4px;
-    background-color: #640c0c; 
-    color: #fff; 
+    background-color: #640c0c;
+    color: #fff;
     cursor: pointer;
 }
 
 table {
-    width: 100%; 
-    border-collapse: collapse; 
+    width: 100%;
+    border-collapse: collapse;
     font-size: 1em;
-    background-color: rgba(28, 24, 24, 0.4); /* Semi-transparent background */
+    background-color: rgba(28, 24, 24, 0.4);
+    /* Semi-transparent background */
 }
 
-th, td {
-    padding: 12px; 
-    border: 1px solid #e9e7e7; 
-    text-align: center; 
+th,
+td {
+    padding: 12px;
+    border: 1px solid #e9e7e7;
+    text-align: center;
 }
 
 th {
-    background-color: #351818; /* Change header background color */
-    color: #e9e7e7; /* Change text color to white */
+    background-color: #351818;
+    /* Change header background color */
+    color: #e9e7e7;
+    /* Change text color to white */
 }
 
 td img.echoes {
@@ -149,18 +162,23 @@ td img.echoes {
     justify-content: center;
     align-items: center;
 }
+
 .footer-link {
-    color: white; /* Keeps the text color white */
- 
+    color: white;
+    /* Keeps the text color white */
+
 }
 
-.mika, .kofi {
+.mika,
+.kofi {
     width: 2.5rem;
     margin-left: 10px;
-    cursor: pointer; /* Changes cursor to pointer on hover */
+    cursor: pointer;
+    /* Changes cursor to pointer on hover */
     vertical-align: middle;
     display: inline-block;
 }
+
 #result {
     margin-top: 20px;
     font-size: 1.2rem;
@@ -168,20 +186,21 @@ td img.echoes {
 }
 
 #result .total-cost-box {
-    font-size: 1rem; 
-    color: #991f2b; 
-    border: 2px solid #991f2b; 
-    padding: 10px; 
-    margin-top: 20px; 
-    display: inline-block; 
+    font-size: 1rem;
+    color: #991f2b;
+    border: 2px solid #991f2b;
+    padding: 10px;
+    margin-top: 20px;
+    display: inline-block;
     background-color: #fffef4;
-    border-radius: 5px; 
+    border-radius: 5px;
 }
 
 /* Responsive styles */
 
 /* Optimized Responsive styles for small screens */
 @media (max-width: 600px) {
+
     /* General reset and overflow handling */
     * {
         margin: 0;
@@ -189,96 +208,65 @@ td img.echoes {
         box-sizing: border-box;
     }
 
-    html, body {
+    html,
+    body {
         width: 100%;
-        min-height: 100vh; /* Ensures full height */
-        overflow-x: hidden; /* Prevent horizontal overflow */
-        overflow-y: auto; /* Enable vertical scrolling */
+        min-height: 100vh;
+        /* Full height */
+        overflow-x: hidden;
+        /* Prevent horizontal overflow */
+        overflow-y: auto;
+        /* Allow vertical scrolling */
         margin: 0;
-        padding: 20px; /* Adds space on all sides */
-        scroll-behavior: smooth; /* Smooth scrolling for better UX */
-        zoom: 1; /* Adjusted zoom for better readability */
+        padding: 10px;
+        /* Add space around the page */
+        scroll-behavior: smooth;
+        background-color: #111;
+        /* Optional: Background to enhance visibility */
+    }
+
+    /* Add extra spacing at the top and bottom */
+    body::before,
+    body::after {
+        content: "";
+        display: block;
+        height: 50px;
+        /* Extra space at top and bottom */
+        width: 100%;
     }
 
     /* Main container adjustments */
     .main-container {
         width: 100%;
+        max-width: 550px;
+        /* Ensure it's not too wide */
+        margin: 20px auto;
+        /* Centered with space around */
         padding: 15px;
-        margin: 20px auto; /* Additional spacing */
-        background-color: rgba(17, 17, 17, 0.8); /* High contrast for visibility */
+        background-color: rgba(17, 17, 17, 0.9);
+        /* High contrast for visibility */
         border-radius: 8px;
-    }
-
-    /* Headings adjustments */
-    h1 {
-        font-size: 1.4rem; /* Slightly larger for readability */
-        margin: 10px 0;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-        margin: 8px 0;
-    }
-
-    /* Form adjustments */
-    form {
-        margin: 15px 0;
-    }
-
-    form input[type="text"] {
-        width: 100%;
-        font-size: 1rem;
-        margin-bottom: 10px;
-        padding: 10px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-    }
-
-    form button[type="submit"] {
-        width: 100%;
-        font-size: 1rem;
-        padding: 10px;
-    }
-
-    /* Table adjustments */
-    .content {
-        overflow-x: auto; /* Ensure table can scroll horizontally */
-        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling for mobile */
-        margin-bottom: 20px;
-        padding: 5px; /* Add padding to avoid content being cut off */
-    }
-
-    table {
-        width: 100%;
-        font-size: 0.9em;
-        min-width: 500px; /* Prevent table from shrinking too much */
-        border-collapse: collapse;
-    }
-
-    th, td {
-        padding: 8px;
-        text-align: center;
-        white-space: nowrap; /* Prevent text wrapping */
-    }
-
-    td img.echoes {
-        width: 1rem; /* Adjust image size for better proportions */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        /* Subtle shadow */
     }
 
     /* Navigation adjustments */
     nav {
-        margin-bottom: 20px;
+        position: fixed;
+        top: 10px;
+        /* Leave space above */
+        left: 0;
+        width: 100%;
+        z-index: 1000;
     }
 
     nav ul {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
     }
 
     nav ul li {
-        display: block;
         width: 100%;
         text-align: center;
         border-bottom: 1px solid #ffeeab;
@@ -286,25 +274,71 @@ td img.echoes {
 
     nav ul li a {
         display: block;
-        padding: 10px 0;
+        padding: 10px;
         font-size: 1rem;
+    }
+
+    /* Headings adjustments */
+    h1 {
+        font-size: 1.3rem;
+        margin: 10px 0;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin: 8px 0;
+    }
+
+    /* Form adjustments */
+    form input[type="text"] {
+        width: 100%;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+
+    form button[type="submit"] {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Table adjustments */
+    .content {
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+        margin: 20px 0;
+        padding: 10px;
+        /* Add spacing */
+    }
+
+    table {
+        width: 100%;
+        min-width: 550px;
+        /* Avoid table squeeze */
+        font-size: 0.85rem;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 6px;
+        white-space: nowrap;
+    }
+
+    td img.echoes {
+        width: 0.8rem;
     }
 
     /* Footer adjustments */
     .footer-content {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         margin-top: 20px;
     }
 
-    .mika, .kofi {
-        width: 2rem; /* Adjust icon size */
+    .mika,
+    .kofi {
+        width: 1.5rem;
         margin: 5px;
-    }
-
-    /* Add some spacing to prevent top cut-off */
-    body::before {
-        content: "";
-        display: block;
-        height: 10px; /* Space to prevent the top being cut off */
     }
 }
