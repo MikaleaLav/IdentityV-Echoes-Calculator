@@ -20,17 +20,14 @@ document.addEventListener('DOMContentLoaded', function () {
         'https://pbs.twimg.com/media/GRU-0d_XwAAlODV?format=jpg&name=large',
     ];
 
-    // Function to select a random image from the array
     function getRandomImage(images) {
         return images[Math.floor(Math.random() * images.length)];
     }
 
-    // Set the random background image
     body.style.backgroundImage = `url('${getRandomImage(backgroundImages)}')`;
 
-    // Fetch conversion rate and currency from HTML attributes
-    const conversionRate = parseFloat(body.getAttribute('data-rate')) || 1; // Default to 1 if missing
-    const currency = body.getAttribute('data-currency') || 'USD'; // Default to USD
+    const conversionRate = parseFloat(body.getAttribute('data-rate')) || 1;
+    const currency = body.getAttribute('data-currency') || 'USD';
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -45,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let remainingEchoes = itemPrice;
         const quantities = new Array(8).fill(0);
 
-        // Cleaned-up package database (only bonus and price)
         const packages = [
             { bonus: 60, price: 0.99 },
             { bonus: 194, price: 2.99 },
@@ -57,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
             { bonus: 6918, price: 99.99 },
         ];
 
-        // Prioritize the largest package first
         for (let i = packages.length - 1; i >= 0; i--) {
             while (remainingEchoes >= packages[i].bonus) {
                 remainingEchoes -= packages[i].bonus;
@@ -66,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // Handle any remaining echoes with the smallest package possible
         if (remainingEchoes > 0) {
             for (let i = 0; i < packages.length; i++) {
                 if (remainingEchoes <= packages[i].bonus) {
@@ -78,22 +72,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // Convert to selected currency
         const totalCostConverted = (totalCostUSD * conversionRate).toFixed(2);
 
-        // Display result
-        resultDiv.innerHTML = `
-            <div class="total-cost-box">
-                Total Cost: $${totalCostUSD.toFixed(2)} (USD) / ${totalCostConverted} ${currency}
-            </div>
-        `;
+        // ✅ Fixed this part to only show second currency if it's not USD
+        let resultText = `Total Cost: $${totalCostUSD.toFixed(2)} (USD)`;
+        if (currency !== 'USD') {
+            resultText += ` / ${totalCostConverted} ${currency}`;
+        }
+        resultDiv.innerHTML = `<div class="total-cost-box">${resultText}</div>`;
 
-        // Update quantities in the table
         document.querySelectorAll('.quantity').forEach((cell, index) => {
             cell.textContent = quantities[index] > 0 ? quantities[index] : '-';
         });
 
-        // Convert prices in the table
         document.querySelectorAll('.price-sar').forEach(cell => {
             const usdPrice = parseFloat(cell.getAttribute('data-usd'));
             const convertedPrice = (usdPrice * conversionRate).toFixed(2);
@@ -101,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Convert prices in the table on page load
     document.querySelectorAll('.price-sar').forEach(cell => {
         const usdPrice = parseFloat(cell.getAttribute('data-usd'));
         const convertedPrice = (usdPrice * conversionRate).toFixed(2);
